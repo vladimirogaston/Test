@@ -1,10 +1,14 @@
 package ar.agenda.presentation.commons;
 
+import ar.agenda.controller.dto.validations.PositiveInteger;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
+@Slf4j
 @NoArgsConstructor
 public class LimitedTextDocumentToNumbers extends PlainDocument {
 
@@ -12,13 +16,11 @@ public class LimitedTextDocumentToNumbers extends PlainDocument {
 
 	@Override
 	public void insertString(int offset, String str, AttributeSet attr) {
-		if(str != null) {
-			try {
-				Integer.parseInt(str);
-				super.insertString(offset, str, attr);
-			}catch(Exception e) {
-				return;
-			}
+		Integer.parseInt(str);
+		try {
+			super.insertString(offset, str, attr);
+		} catch (BadLocationException e) {
+			log.warn(e.getMessage());
 		}
 	}
 }

@@ -30,5 +30,5 @@ public class Account implements Serializable {
 	Date endOperations;
 
 	@ElementCollection(targetClass = Role.class)
-	Set<Role> roles;
+	private Set<Role> roles;
 }
