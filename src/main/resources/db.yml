@@ -1,0 +1,52 @@
+#YAML file to populate the database with entities for tests purpouse
+#RECOMENDED ONLY WRITE!!
+userList:
+  - name: John
+    surname: Doe
+    dni: 43588
+    contact:
+      phone: 4441122
+      email: "johndoe@gmail.com"
+    gender: MALE
+    bornDate: 1990-08-07
+    address:
+      street: streetnr1
+      number: 1122
+      flat: 2
+      dpt: A
+    account:
+      username: u0001
+      password: u0001pass
+      initOperations: 1990-08-07
+      roles:
+        - Admin
+        - Manager
+  - name: Jennifer
+    surname: Doe
+    dni: 144412
+    contact:
+      phone: 111222
+      email: "jenniferdoe@fantasy.com"
+    gender: FEMALE
+    bornDate: 1991-08-07
+    address:
+      street: streetnr1
+      number: 1122
+      flat: 2
+      dpt: A
+    account:
+      username: u0002
+      password: u0002pass
+      initOperations: 1991-08-07
+      roles:
+        - Admin
+cityList:
+  - name: Orel
+    postalCode: 1322
+    state: Kalinin
+  - name: Karkov
+    postalCode: 2213
+    state: Kalinin
+  - name: Sevastopol
+    postalCode: 1231
+    state: Kalinin
