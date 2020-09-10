@@ -9,12 +9,16 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.InputStream;
 
 @Slf4j
 public class DatabaseSeederServiceImpl implements DatabaseSeeder {
 
-    final String ymlFileName = "db.yml"; // TODO must be injected not hard-coded
+    @Inject
+    @Named("DB_SEED_FILE")
+    static final String ymlFileName = "db.yml";
+
     UserDao userDao;
     CityDao cityDao;
 
@@ -26,9 +30,6 @@ public class DatabaseSeederServiceImpl implements DatabaseSeeder {
 
     @Override
     public void seedDatabase() {
-        if(ymlFileName.isBlank() || ymlFileName == null) {
-            throw new IllegalArgumentException("The file .YML for seed database should not be blank or null.");
-        }
         DatabaseGraph graph = loadDatabaseGraph();
         for (User user : graph.getUserList()) {
             userDao.save(user);

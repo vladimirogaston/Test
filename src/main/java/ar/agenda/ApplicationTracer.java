@@ -13,8 +13,7 @@ public class ApplicationTracer implements MethodInterceptor {
 		try {
 			String params = Arrays.toString(invocation.getArguments());
 			log.info("METHOD: " + invocation.getMethod().toString() + " PARAMS: " + params);
-			Object result = invocation.proceed();
-			return result;
+			return invocation.proceed();
 		} catch (Throwable tr) {
 			log.error("EXCEPTION: " + tr.getMessage());
 			throw tr;

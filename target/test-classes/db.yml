@@ -1,0 +1,83 @@
+#YAML file to populate the database with entities for tests purpouse
+#RECOMENDED ONLY WRITE!!
+cityList:
+  - name: Orel
+    postalCode: 1322
+    state: Kalinin
+  - name: Karkov
+    postalCode: 2213
+    state: Kalinin
+  - name: Sevastopol
+    postalCode: 1231
+    state: Kalinin
+userList:
+  - name: John
+    surname: Doe
+    dni: 43588
+    contact:
+      phone: 4441122
+      email: "johndoe@gmail.com"
+    gender: MALE
+    bornDate: 1990-08-07
+    address:
+      street: streetnr1
+      number: 1122
+      flat: 2
+      dpt: A
+    userAccount:
+      username: u0001
+      password: u0001pass
+      initOperations: 1990-08-07
+      role: ADMIN
+  - name: Carolina
+    surname: del Sur
+    dni: 666112
+    contact:
+      phone: 4444389
+      email: "caroline@gmail.com"
+    gender: FEMALE
+    bornDate: 1990-08-07
+    address:
+      street: streetnr3
+      number: 1123
+      flat: 3
+      dpt: C
+    userAccount:
+      username: u0002
+      password: u0002pass
+      initOperations: 1990-08-07
+      role: ADMIN
+  - name: Ricardo
+    surname: Montaner
+    dni: 676155
+    contact:
+      phone: 447455
+      email: "ricardito@monty.com"
+    gender: MALE
+    bornDate: 1968-08-07
+  - name: Mauricio
+    surname: Macri
+    dni: 666
+    contact:
+      phone: 132232
+      email: "lalevantoenpala@dolars.usa"
+    gender: MALE
+    bornDate: 1958-08-07
+    address:
+      street: streetnr2
+      number: 1123
+      flat: 2
+      dpt: B
+  - name: Elisa
+    surname: Carrio
+    dni: 6660
+    contact:
+      phone: 102232
+      email: "tomomerca@sinparar.com.ar"
+    gender: FEMALE
+    bornDate: 1951-08-07
+    address:
+      street: streetnr1
+      number: 1122
+      flat: 1
+      dpt: A

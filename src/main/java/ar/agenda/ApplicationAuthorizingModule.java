@@ -5,6 +5,7 @@ import org.apache.shiro.guice.aop.ShiroAopModule;
 
 public class ApplicationAuthorizingModule extends ShiroAopModule {
 
+    @Override
     protected void configureInterceptors(AnnotationResolver resolver) {
     }
 }

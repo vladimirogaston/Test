@@ -1,5 +1,6 @@
 package ar.agenda.dao.entities;
 
+import ar.agenda.presentation.Profile;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,6 +52,8 @@ public class User implements Serializable {
     @JoinColumn
     City city;
 
+    @Profile("dev")
+    @Transient
     public static User buildTestUser() {
     	User user = new User();
     	user.setName("un000");

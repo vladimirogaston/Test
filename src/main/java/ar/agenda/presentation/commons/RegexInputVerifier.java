@@ -8,7 +8,6 @@ public class RegexInputVerifier extends InputVerifier {
 	String regex;
 	
 	public RegexInputVerifier(String regex) {
-		assert regex != null;
 		this.regex = regex;
 	}
 	 

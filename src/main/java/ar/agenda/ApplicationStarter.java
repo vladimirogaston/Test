@@ -16,7 +16,7 @@ import java.lang.reflect.Field;
 @Slf4j
 public class ApplicationStarter {
 
-    static Injector injector;
+    Injector injector;
 
     ApplicationStarter setLookAndFeel() {
         try {

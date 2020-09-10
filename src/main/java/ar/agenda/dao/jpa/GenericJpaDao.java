@@ -14,7 +14,7 @@ import java.util.Optional;
 
 public abstract class GenericJpaDao<T> implements GenericDao<T, Integer> {
 
-	static EntityManager em;
+	EntityManager em;
 	Class<T> type;
 
 	public GenericJpaDao() {
