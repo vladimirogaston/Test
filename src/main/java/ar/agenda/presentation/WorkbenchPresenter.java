@@ -1,6 +1,7 @@
 package ar.agenda.presentation;
 
 import ar.agenda.presentation.views.WorkbenchView;
+import org.hibernate.cfg.NotYetImplementedException;
 
 import javax.inject.Inject;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ public class WorkbenchPresenter implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        throw new NotYetImplementedException();
     }
 
     @Trace

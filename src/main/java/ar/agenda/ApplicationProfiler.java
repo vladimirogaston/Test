@@ -17,10 +17,9 @@ public class ApplicationProfiler implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         final Profile annotation = invocation.getMethod().getAnnotation(Profile.class);
-        if(getActiveProfile().isPresent()) {
-            if(getActiveProfile().get().matches(annotation.value())) {
-                return invocation.proceed();
-            }
+        String activeProfile = getActiveProfile().orElseThrow(IllegalArgumentException::new);
+        if(activeProfile.matches(annotation.value())) {
+            return invocation.proceed();
         }
         throw new IllegalStateException(invocation.getMethod().getName() + " Only allowed for " + annotation.value() + " profile.");
     }

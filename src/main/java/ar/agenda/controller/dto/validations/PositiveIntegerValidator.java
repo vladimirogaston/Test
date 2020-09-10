@@ -7,6 +7,7 @@ public class PositiveIntegerValidator implements ConstraintValidator<PositiveInt
 
     @Override
     public void initialize(PositiveInteger constraintAnnotation) {
+        // Empty, not operation
     }
 
     @Override

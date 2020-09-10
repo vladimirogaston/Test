@@ -12,8 +12,7 @@ public class ProfilerServiceImpl implements ProfilerService {
 
     @Override
     public Properties getDatabaseConfigurationProperties() throws IOException {
-        Properties properties = readProperties(getActiveProfile() + ".properties");
-        return properties;
+        return readProperties(getActiveProfile() + ".properties");
     }
 
     @Override

@@ -15,13 +15,12 @@ public class CityDaoImpl extends GenericJpaDao<City> implements CityDao {
 
     @Override
     public Optional<City> findByName(String name) {
-        Query query = em.createQuery("SELECT c FROM City c WHERE c.name LIKE :name");
-        query.setParameter("name", name);
-        Optional ret = Optional.empty();
         try {
-            City city = (City) query.getSingleResult();
-            ret = Optional.ofNullable(city);
-        } catch (NoResultException e) {}
-        return ret;
+            Query query = em.createQuery("SELECT c FROM City c WHERE c.name LIKE :name");
+            query.setParameter("name", name);
+            return Optional.ofNullable((City) query.getSingleResult());
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
     }
 }

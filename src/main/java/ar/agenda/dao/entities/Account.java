@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Embeddable
-public class Account {
+public class Account implements Serializable {
 
 	@Column(unique = true)
 	String username;

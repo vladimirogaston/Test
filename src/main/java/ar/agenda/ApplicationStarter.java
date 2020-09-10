@@ -16,19 +16,16 @@ import java.lang.reflect.Field;
 @Slf4j
 public class ApplicationStarter {
 
-    static Injector injector;
+    Injector injector;
 
     ApplicationStarter setLookAndFeel() {
         try {
             UIManager.setLookAndFeel ("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException |
+                 ClassNotFoundException |
+                 IllegalAccessException |
+                 InstantiationException e) {
+            log.error(e.getMessage());
         }
         return this;
     }
@@ -83,7 +80,6 @@ public class ApplicationStarter {
             Field logger = cls.getDeclaredField("logger");
             u.putObjectVolatile(cls, u.staticFieldOffset(logger), null);
         } catch (Exception e) {
-            e.printStackTrace();
             System.exit(1);
         }
     }
