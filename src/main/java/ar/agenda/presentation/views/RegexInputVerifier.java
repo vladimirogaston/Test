@@ -1,4 +1,4 @@
-package ar.agenda.presentation.commons;
+package ar.agenda.presentation.views;
 
 import javax.swing.*;
 import java.util.regex.Pattern;

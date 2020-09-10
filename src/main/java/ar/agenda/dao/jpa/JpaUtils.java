@@ -1,12 +1,14 @@
 package ar.agenda.dao.jpa;
 
 import ar.agenda.controller.services.ProfilerServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.IOException;
 
+@Slf4j
 public class JpaUtils {
 
     EntityManager em;
@@ -19,7 +21,7 @@ public class JpaUtils {
         }catch(RuntimeException e) {
             throw e;
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 

@@ -1,4 +1,4 @@
-package ar.agenda.presentation.commons;
+package ar.agenda.presentation.views;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
