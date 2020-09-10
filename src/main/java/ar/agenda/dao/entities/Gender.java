@@ -1,5 +1,7 @@
 package ar.agenda.dao.entities;
 
-public enum Gender {
-	MALE, FEMALE, OTHER
+import java.io.Serializable;
+
+public enum Gender implements Serializable {
+	MALE, FEMALE, OTHER;
 }

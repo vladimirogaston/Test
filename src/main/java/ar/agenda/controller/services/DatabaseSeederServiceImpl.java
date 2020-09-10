@@ -17,7 +17,7 @@ public class DatabaseSeederServiceImpl implements DatabaseSeeder {
 
     @Inject
     @Named("DB_SEED_FILE")
-    static final String ymlFileName = "db.yml";
+    final String ymlFileName = "db.yml";
 
     UserDao userDao;
     CityDao cityDao;

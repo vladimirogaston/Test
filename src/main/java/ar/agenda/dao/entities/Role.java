@@ -1,5 +1,7 @@
 package ar.agenda.dao.entities;
 
-public enum Role {
+import java.io.Serializable;
+
+public enum Role implements Serializable {
 	Admin, Manager, Operator, User
 }

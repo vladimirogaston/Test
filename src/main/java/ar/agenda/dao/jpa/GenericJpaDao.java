@@ -47,11 +47,13 @@ public abstract class GenericJpaDao<T> implements GenericDao<T, Integer> {
 	@Override
 	public void delete(Integer id) {
 		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		T target = read(id).get();
-		em.remove(target);
-		em.flush();
-		tx.commit();
+		T target = em.find(type, id);
+		if(target != null) {
+			tx.begin();
+			em.remove(target);
+			em.flush();
+			tx.commit();
+		}
 	}
 
 	@Override
